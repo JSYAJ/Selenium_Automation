@@ -45,13 +45,13 @@ public class TC03 {
 		List<WebElement> rows = acc_det_table.findElements(By.tagName("tr"));
 		System.out.println("No. of row is " + rows.size());
 
+		for (int i = 1; i < rows.size() - 2; i++) {
+			List<WebElement> cols = rows.get(i).findElements(By.tagName("td"));
+			System.out.println(
+					cols.get(0).getText() + "  		 " + cols.get(3).getText() + "  		 " + cols.get(1).getText());
+		}
 		
-		for (WebElement row : rows) {
-		 
-		  List<WebElement> cols=row.findElements(By.tagName("td")); for (WebElement col
-		  : cols) { System.out.println("Colume values is : "+col.getText()); } }
-		
-		 D.findElement(By.id("lbLoginOut")).click();
+		D.findElement(By.id("lbLoginOut")).click();
 
 	}
 
